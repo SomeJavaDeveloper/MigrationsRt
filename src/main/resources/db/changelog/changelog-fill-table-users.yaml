@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-fill-users.yaml
+  - changeSet:
+      id: 2
+      author: Artyom
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: "user1"
+              - column:
+                  name: firstname
+                  value: "ivan"
+              - column:
+                  name: lastname
+                  value: "ivanov"
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: "user2"
+              - column:
+                  name: firstname
+                  value: "alexandr"
+              - column:
+                  name: lastname
+                  value: "alexandro"

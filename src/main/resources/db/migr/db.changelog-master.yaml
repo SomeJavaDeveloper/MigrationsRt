@@ -1,0 +1,60 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-users-t.yaml
+  - changeSet:
+      id: 1
+      author: artyom
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: username
+                  type: varchar(255)
+                  constraints:
+                    #unique: true
+                    nullable: false
+              - column:
+                  name: firstname
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: lastname
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 2
+      author: artyom
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: "user1.2"
+              - column:
+                  name: firstname
+                  value: "ivan"
+              - column:
+                  name: lastname
+                  value: "ivanov"
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: "user2.2"
+              - column:
+                  name: firstname
+                  value: "alexandr"
+              - column:
+                  name: lastname
+                  value: "alexandro"

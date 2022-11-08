@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changelog-add-table-users.yaml
+  - include:
+      file: db/changelog/changelog-fill-table-users.yaml

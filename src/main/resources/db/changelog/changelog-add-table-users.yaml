@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-users-t.yaml
+  - changeSet:
+      id: 1
+      author: Artyom
+      preConditions:
+        - onFail: MARK_RAN
+          not:
+            tableExists:
+              tableName: users
+
+      #      preConditions:
+      #        - onFail: MARK_RAN
+      #          not:
+      #            tableExists:
+      #              tableName: user_details
+      #
+      #        - preConditions:
+      #            - onFail: WARN
+      #            - sqlCheck:
+      #                expectedResult: 0
+      #                sql: select count(*) from DATABASECHANGELOGLOCK
+
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: username
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: firstname
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: lastname
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
