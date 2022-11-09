@@ -1,5 +1,11 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/changelog-add-table-users.yaml
+        file: db/changelog/changelog-add-table-users.yaml
   - include:
-      file: db/changelog/changelog-fill-table-users.yaml
+        file: db/changelog/changelog-fill-table-users.yaml
+  - include:
+        file: db/changelog/changelog-add-table-orders.yaml
+  - include:
+        file: db/changelog/changelog-add-fk-orders.yaml
+  - include:
+        file: db/changelog/changelog-fill-table-orders.yaml

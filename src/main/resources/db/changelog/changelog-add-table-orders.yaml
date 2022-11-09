@@ -1,11 +1,11 @@
 databaseChangeLog:
-  - logicalFilePath: db/changelog/db.changelog-users-t.yaml
+  - logicalFilePath: db/changelog/db.changelog-orders-t.yaml
   - changeSet:
-      id: 1
+      id: 3
       author: Artyom
       changes:
         - createTable:
-            tableName: users
+            tableName: orders
             columns:
               - column:
                   name: id
@@ -15,17 +15,10 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: username
+                  name: product_name
                   type: varchar(255)
                   constraints:
                     nullable: false
               - column:
-                  name: firstname
-                  type: varchar(100)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: lastname
-                  type: varchar(100)
-                  constraints:
-                    nullable: false
+                  name: user_id
+                  type: BIGINT

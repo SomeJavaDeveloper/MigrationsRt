@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-fill-orders.yaml
+  - changeSet:
+      id: 5
+      author: Artyom
+      preConditions:
+        - onFail: MARK_RAN
+        - tableExists:
+            tableName: orders
+      changes:
+        - insert:
+            tableName: orders
+            columns:
+              - column:
+                  name: product_name
+                  value: "product for u1"
+              - column:
+                  name: user_id
+                  value: "1"
+        - insert:
+            tableName: orders
+            columns:
+              - column:
+                  name: product_name
+                  value: "product for u2"
+              - column:
+                  name: user_id
+                  value: "2"

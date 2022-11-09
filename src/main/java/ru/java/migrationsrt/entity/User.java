@@ -1,8 +1,10 @@
 package ru.java.migrationsrt.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -22,5 +24,8 @@ public class User {
     private String firstname;
     @Column(name = "lastname", nullable = false)
     private String lastname;
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Order> orders;
 }
 

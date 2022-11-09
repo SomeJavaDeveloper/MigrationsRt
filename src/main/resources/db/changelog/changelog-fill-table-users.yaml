@@ -3,6 +3,10 @@ databaseChangeLog:
   - changeSet:
       id: 2
       author: Artyom
+      preConditions:
+        - onFail: MARK_RAN
+        - tableExists:
+            tableName: users
       changes:
         - insert:
             tableName: users
