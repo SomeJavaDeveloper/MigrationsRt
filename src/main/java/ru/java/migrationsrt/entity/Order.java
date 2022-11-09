@@ -19,7 +19,7 @@ public class Order {
     private Long id;
     @Column(name = "product_name", nullable = false)
     private String productName;
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     @JsonIgnore
     private User user;

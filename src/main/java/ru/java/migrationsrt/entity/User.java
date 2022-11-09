@@ -24,7 +24,7 @@ public class User {
     private String firstname;
     @Column(name = "lastname", nullable = false)
     private String lastname;
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     @JsonIgnore
     private List<Order> orders;
 }

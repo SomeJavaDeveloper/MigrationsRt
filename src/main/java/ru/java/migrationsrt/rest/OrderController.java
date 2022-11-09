@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.java.migrationsrt.entity.Order;
-import ru.java.migrationsrt.entity.User;
 import ru.java.migrationsrt.service.OrderService;
 
 import java.util.List;
@@ -20,7 +19,7 @@ public class OrderController {
     }
 
     @GetMapping
-    public List<Order> getAll(){
+    public List<Order> getAll() {
         return orderService.getAll();
     }
 }
