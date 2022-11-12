@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-fill-user_subscr.yaml
+  - changeSet:
+      id: 11
+      author: Artyom
+      preConditions:
+        - onFail: MARK_RAN
+        - tableExists:
+            tableName: user_subscriptions
+      changes:
+        - insert:
+            tableName: user_subscriptions
+            columns:
+              - column:
+                  name: subscriber_id
+                  value: "1"
+              - column:
+                  name: subscription_id
+                  value: "2"
+        - insert:
+            tableName: user_subscriptions
+            columns:
+              - column:
+                  name: subscriber_id
+                  value: "2"
+              - column:
+                  name: subscription_id
+                  value: "1"

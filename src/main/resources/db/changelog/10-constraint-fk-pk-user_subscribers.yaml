@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 10
+      author:  Artyom
+      comment: организации связи many-to-many
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: subscriber_id
+            baseTableName: user_subscriptions
+            constraintName: fk_subscriber_on_users
+            referencedColumnNames: id
+            referencedTableName: users
+        - addForeignKeyConstraint:
+              baseColumnNames: subscription_id
+              baseTableName: user_subscriptions
+              constraintName: fk_subscription_on_users
+              referencedColumnNames: id
+              referencedTableName: users
+        - addPrimaryKey:
+              columnNames: subscriber_id, subscription_id
+              constraintName: pk_subscribers
+              tableName: user_subscriptions
