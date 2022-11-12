@@ -9,3 +9,9 @@ databaseChangeLog:
         file: db/changelog/4-add-fk-orders.yaml
   - include:
         file: db/changelog/5-fill-table-orders.yaml
+  - include:
+        file: db/changelog/6-add-table-cars.yaml
+  - include:
+      file: db/changelog/7-fill-table-cars.yaml
+  - include:
+      file: db/changelog/8-loadupdtdata-table-cars.yaml

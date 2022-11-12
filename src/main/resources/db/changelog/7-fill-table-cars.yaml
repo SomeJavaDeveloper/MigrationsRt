@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-fill-orders.yaml
+  - changeSet:
+      id: 7
+      author: Artyom
+      preConditions:
+        - onFail: MARK_RAN
+        - tableExists:
+            tableName: cars
+      changes:
+        - insert:
+            tableName: cars
+            columns:
+              - column:
+                  name: model_name
+                  value: "granta"
+              - column:
+                  name: horse_powers
+                  value: "10"
+        - insert:
+            tableName: cars
+            columns:
+              - column:
+                  name: model_name
+                  value: "kalina"
+              - column:
+                  name: horse_powers
+                  value: "15"

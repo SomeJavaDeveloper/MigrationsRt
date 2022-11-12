@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-lud-cars.yaml
+  - changeSet:
+      id: 8
+      author: Artyom
+      preConditions:
+        - onFail: MARK_RAN
+        - tableExists:
+            tableName: cars
+      loadUpdateData:
+        catalogName: cat
+        columns:
+          - column:
+                name: id
+                type: BIGINT
+          - column:
+              name: horse_powers
+              type: INT
+        encoding: UTF-8
+        file: db/csv/cars.csv
+        onlyUpdate: false
+        primaryKey: id
+        tableName: cars
