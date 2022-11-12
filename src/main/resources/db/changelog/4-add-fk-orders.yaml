@@ -2,6 +2,7 @@ databaseChangeLog:
   - changeSet:
       id: 4
       author:  Artyom
+      comment: Нормализация таблици блабла
       changes:
         - addForeignKeyConstraint:
             baseColumnNames: user_id
