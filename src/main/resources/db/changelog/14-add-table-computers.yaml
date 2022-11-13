@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-computers-t.yaml
+  - changeSet:
+      id: 14
+      author: Artyom
+      changes:
+        - createTable:
+            tableName: computers
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: model_name
+                  type: boolean
+                  constraints:
+                    nullable: false
+        - modifyDataType:
+            columnName: model_name
+            newDataType: varchar(255)
+            tableName: computers
+        - addColumn:
+            tableName: computers
+            columns:
+              - column:
+                  name: number_of_cores
+                  type: INTEGER
+                  constraints:
+                    nullable: false
