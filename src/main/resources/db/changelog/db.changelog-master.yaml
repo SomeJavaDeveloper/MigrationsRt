@@ -21,3 +21,7 @@ databaseChangeLog:
       file: db/changelog/10-constraint-fk-pk-user_subscribers.yaml
   - include:
       file: db/changelog/11-fill-table-user_subscriptions.yaml
+  - include:
+      file: db/changelog/12-add-table-buildings.sql
+  - include:
+      file: db/changelog/13-fill-table-buildings.sql
