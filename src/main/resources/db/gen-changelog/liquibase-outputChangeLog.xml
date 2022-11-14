@@ -1,0 +1,121 @@
+<databaseChangeLog>
+    <changeSet author="codeinside (generated)" id="1668427776435-1">
+        <createSequence sequenceName="buildings_id_seq"/>
+    </changeSet>
+    <changeSet author="codeinside (generated)" id="1668427776435-2">
+        <createSequence sequenceName="cars_id_seq"/>
+    </changeSet>
+    <changeSet author="codeinside (generated)" id="1668427776435-3">
+        <createSequence sequenceName="computers_id_seq"/>
+    </changeSet>
+    <changeSet author="codeinside (generated)" id="1668427776435-4">
+        <createSequence sequenceName="orders_id_seq"/>
+    </changeSet>
+    <changeSet author="codeinside (generated)" id="1668427776435-5">
+        <createSequence sequenceName="ships_id_seq"/>
+    </changeSet>
+    <changeSet author="codeinside (generated)" id="1668427776435-6">
+        <createSequence sequenceName="users_id_seq"/>
+    </changeSet>
+    <changeSet author="codeinside (generated)" id="1668427776435-7">
+        <createTable tableName="buildings">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="pk_buildings"/>
+            </column>
+            <column name="building_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="number_of_floors" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeinside (generated)" id="1668427776435-8">
+        <createTable tableName="cars">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="cars_pkey"/>
+            </column>
+            <column name="model_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="horse_powers" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeinside (generated)" id="1668427776435-9">
+        <createTable tableName="computers">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="computers_pkey"/>
+            </column>
+            <column name="model_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="number_of_cores" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeinside (generated)" id="1668427776435-10">
+        <createTable tableName="orders">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="orders_pkey"/>
+            </column>
+            <column name="product_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeinside (generated)" id="1668427776435-11">
+        <createTable tableName="ships">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="ships_pkey"/>
+            </column>
+            <column name="ship_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeinside (generated)" id="1668427776435-12">
+        <createTable tableName="user_subscriptions">
+            <column name="subscriber_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="subscription_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeinside (generated)" id="1668427776435-13">
+        <createTable tableName="users">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="users_pkey"/>
+            </column>
+            <column name="username" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="firstname" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lastname" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeinside (generated)" id="1668427776435-14">
+        <addPrimaryKey columnNames="subscriber_id, subscription_id" constraintName="pk_subscribers" tableName="user_subscriptions"/>
+    </changeSet>
+    <changeSet author="codeinside (generated)" id="1668427776435-15">
+        <addUniqueConstraint columnNames="model_name" constraintName="cars_model_name_key" tableName="cars"/>
+    </changeSet>
+    <changeSet author="codeinside (generated)" id="1668427776435-16">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="orders" constraintName="fk_orders_on_users" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="users"/>
+    </changeSet>
+    <changeSet author="codeinside (generated)" id="1668427776435-17">
+        <addForeignKeyConstraint baseColumnNames="subscriber_id" baseTableName="user_subscriptions" constraintName="fk_subscriber_on_users" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="users"/>
+    </changeSet>
+    <changeSet author="codeinside (generated)" id="1668427776435-18">
+        <addForeignKeyConstraint baseColumnNames="subscription_id" baseTableName="user_subscriptions" constraintName="fk_subscription_on_users" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="users"/>
+    </changeSet>
+</databaseChangeLog>

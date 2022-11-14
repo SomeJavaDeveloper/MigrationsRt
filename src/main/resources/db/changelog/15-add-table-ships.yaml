@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-ships-t.yaml
+  - changeSet:
+      id: 15
+      author: Artyom
+      changes:
+        - createTable:
+            tableName: ships
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: ship_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false

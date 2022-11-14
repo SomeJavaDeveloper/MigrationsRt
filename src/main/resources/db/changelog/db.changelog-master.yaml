@@ -27,3 +27,5 @@ databaseChangeLog:
       file: db/changelog/13-fill-table-buildings.sql
   - include:
       file: db/changelog/14-add-table-computers.yaml
+  - include:
+      file: db/changelog/15-add-table-ships.yaml

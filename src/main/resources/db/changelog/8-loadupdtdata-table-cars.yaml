@@ -18,6 +18,6 @@ databaseChangeLog:
               type: INT
         encoding: UTF-8
         file: db/csv/cars.csv
-        onlyUpdate: false
+        onlyUpdate: true
         primaryKey: id
         tableName: cars
