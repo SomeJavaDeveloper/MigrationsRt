@@ -8,7 +8,6 @@ databaseChangeLog:
         - tableExists:
             tableName: cars
       loadUpdateData:
-        catalogName: cat
         columns:
           - column:
                 name: id
