@@ -29,3 +29,7 @@ databaseChangeLog:
       file: db/changelog/14-add-table-computers.yaml
   - include:
       file: db/changelog/15-add-table-ships.yaml
+  - include:
+      file: db/changelog/16-index-for-users-on-username.yaml
+  - include:
+      file: db/changelog/17-add-table-diff-entity.yaml

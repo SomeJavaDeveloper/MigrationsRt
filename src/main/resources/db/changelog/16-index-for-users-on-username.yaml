@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-users-idx.yaml
+  - changeSet:
+      id:  16
+      author:  Artyom
+      changes:
+        - createIndex:
+            clustered:  true
+            columns:
+              - column:
+                  descending:  true
+                  name:  username
+            indexName:  idx_username
+            schemaName:  public
+            tableName:  users
+            unique:  true

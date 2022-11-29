@@ -1,0 +1,15 @@
+<databaseChangeLog>
+    <changeSet author="codeinside (generated)" id="1669710636656-1">
+        <createSequence sequenceName="diff-entity_id_seq"/>
+    </changeSet>
+    <changeSet author="codeinside (generated)" id="1669710636656-2">
+        <createTable tableName="diff-entity">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="diff-entity_pkey"/>
+            </column>
+            <column name="some_name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

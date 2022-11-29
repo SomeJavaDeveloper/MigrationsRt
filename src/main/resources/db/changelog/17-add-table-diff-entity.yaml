@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-diff-e-t.yaml
+  - changeSet:
+      id: 17
+      author: Artyom
+      changes:
+        - createTable:
+            tableName: diff-entity
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: some_name
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
